@@ -1,7 +1,7 @@
 from app.helpers import display_welcome, display_main_menu, login_or_register, browse_programs, view_enrollments, enroll_in_program
 
 def main():
-    print("🌟 Welcome to Angaza Consultants CLI 🌟\n")
+    print(" Welcome to Angaza Consultants CLI \n")
 
     while True:
         print("Please choose an option:")
