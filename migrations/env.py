@@ -7,9 +7,9 @@ from alembic import context
 
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from app.models import Base  
-from app.db import engine
+
+# If needed, add your project root to sys.path so imports work
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -24,14 +24,14 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
+
+from app.models import Base  # Import your SQLAlchemy Base here
+# If you have multiple models, you can import them all
+# and set target_metadata to a MetaData object that includes all of them.
+# from app.models import User, Program, Enrollment
+# If you have a custom configuration option, you can access it like this:
+
 target_metadata = Base.metadata
-
-
-# other values from the config, defined by the needs of env.py,
-# can be acquired:
-# my_important_option = config.get_main_option("my_important_option")
-# ... etc.
-
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode.
