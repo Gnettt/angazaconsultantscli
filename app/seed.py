@@ -11,9 +11,12 @@ def seed_data():
 
   
     users = [
-        User(name="Alice Johnson", email="alice@example.com", phone="0712345678"),
-        User(name="Bob Smith", email="bob@example.com", phone="0723456789"),
-        User(name="Catherine Lee", email="catherine@example.com", phone="0734567890"),
+        User(name="Alice Johnson", email="alice@example.com",),
+        User(name="Bob Smith", email="bob@example.com",),
+        User(name="Charlie Brown", email="charlie@gail.com",),
+        User(name="Catherine Lee", email="catherine@example.com", ),
+        User(name="David Kim", email=" david@gmail.com", ),
+        User(name="Eva Green", email="eva@gmail.com", ),
     ]
     session.add_all(users)
     session.commit()
@@ -21,9 +24,9 @@ def seed_data():
 
   
     programs = [
-        Program(title="Full Stack Web Development", description="Learn to build dynamic websites and APIs."),
-        Program(title="Data Science Bootcamp", description="Master data analysis, visualization, and machine learning."),
-        Program(title="Cybersecurity Fundamentals", description="Learn the basics of securing networks and systems."),
+        Program(title="Mucuna development", description="lorem."),
+        Program(title="Soya Youth program", description="lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+        Program(title="Avacado program", description="Lorem."),
     ]
     session.add_all(programs)
     session.commit()

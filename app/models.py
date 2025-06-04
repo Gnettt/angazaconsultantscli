@@ -9,7 +9,6 @@ class User(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
-    
     enrollments = relationship("Enrollment", back_populates="user")
     
     def __repr__(self):
@@ -40,7 +39,7 @@ class Enrollment(Base):
     def __repr__(self):
         return f"<Enrollment(id={self.id}, user_id={self.user_id}, program_id={self.program_id})>"
 
-# Set up SQLite engine and create tables
+
 engine = create_engine('sqlite:///app.db')
 Base.metadata.create_all(engine)
 

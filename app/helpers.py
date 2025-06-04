@@ -123,4 +123,14 @@ def enroll_in_program():
         session.close()
         return
     
-    enrollment = Enr
+        enrollment = Enrollment(user_id=current_user.id, program_id=program.id)
+    session.add(enrollment)
+    try:
+        session.commit()
+        print(f"Successfully enrolled in '{program.title}'.")
+    except:
+        session.rollback()
+        print("Enrollment failed. Please try again.")
+
+    session.close()
+
